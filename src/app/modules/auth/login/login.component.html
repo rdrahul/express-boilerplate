@@ -1,0 +1,47 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 [ngClass]="selected == 'signin' ? 'active' : 'inactive underlineHover'" (click)= "selecteTab('signin')" > Sign In </h2>
+    <h2 [ngClass] ="selected == 'signup' ? 'active' : 'inactive underlineHover'" (click)= "selecteTab('signup')"  >Sign Up </h2>
+
+    <div class="signin" *ngIf="selected == 'signin'" > 
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      </div>
+
+      <!-- Login Form -->
+      <form [formGroup]="loginForm" (submit)="login()" >
+        <input type="email" id="login" class="fadeIn second" name="email" placeholder="email" formControlName="email">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" formControlName="password">
+        <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="!loginForm.valid">
+      </form>
+
+      <!-- Remind Password -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
+    </div>
+
+    <div class="signup" *ngIf="selected == 'signup'"> 
+
+      <!-- Register Form -->
+      <form [formGroup]="registerForm" (submit)="register()" >
+        <input type="text" id="name" class="fadeIn first" name="name" placeholder="name" formControlName="name">
+        <input type="email" id="email" class="fadeIn second" name="email" placeholder="email" formControlName="email">
+        <input type="password" id="password" class="fadeIn second" name="password" placeholder="password" formControlName="password">
+        <input type="password" id="conf-password" class="fadeIn second" name="confpassword" placeholder="confirm password" formControlName="confirm">      
+        <input type="submit" class="fadeIn fourth" value="Sign Up" [disabled]="!registerForm.valid" >  
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
