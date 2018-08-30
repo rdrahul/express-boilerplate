@@ -2,13 +2,13 @@ const
 	express = require('express'),
 	path = require('path'),
 	app = express(),
-	mongoose = require('mongoose'),
-	userRoute = require('./ServerSide/routes/users.route'),
 	bodyParser = require('body-parser'),
 	server = require('http').createServer(app),
 	expressConfig = require('./ServerSide/config/express'),
 	port =  process.env.port ||  3000;
-// const ConnectionString = "mongodb://127.0.0.1/todo";
+
+
+//for frontend
 app.use( express.static( path.join(__dirname , 'dist')) );
 
 //set up body parse

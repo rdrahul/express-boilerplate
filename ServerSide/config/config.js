@@ -1,9 +1,6 @@
 const
 	path = require('path'),
 	rootPath = path.normalize(__dirname + '/..'),
-	//social = require('./social'),
-	//mailer = require('./mailer'),
-	//razorpay = require('./razorpay'),
 	database = require('./database'),
 	env = process.env.NODE_ENV || 'development',
 	_ = require('lodash');
@@ -12,44 +9,28 @@ var config = {
 	development: {
 		root: rootPath,
 		app: {
-			name: 'loande'
+			name: 'expressboilerplate'
 		},
 		db: database.development,
-		port: process.env.PORT || 8080,
-		//social: social,
-		//sessionSecret: 'secret',
-		//sessionCollection: 'sessions',
-		//mailer: mailer.development,
-		redis_port: '127.0.0.1',
-		redis_host: 6379
-		//razorpay: razorpay
+		port: process.env.PORT || 8080
+
 	},
 
 	test: {
 		root: rootPath,
 		app: {
-			name: 'loande'
+			name: 'expressboilerplate'
 		},
-		port: process.env.PORT || 8080,
-		db: database.test,
-		// social: social,
-		// mailer: mailer,
-		redis_port: '127.0.0.1',
-		redis_host: 16379
-		//razorpay: razorpay
+		port: process.env.PORT || 8080
 	},
 
 	production: {
 		root: rootPath,
 		app: {
-			name: 'loande'
+			name: 'expressboilerplate'
 		},
-		port: process.env.PORT || 8080,
-		// db: database.production,
-		// social: social,
-		// mailer: mailer.production,
-		redis_port: '127.0.0.1',
-		redis_host: 16379
+		port: process.env.PORT || 8080
+
 	}
 };
 
